@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooplink Bot - Privacy Policy & Terms</title>
+    <style>
+        :root {
+            --primary-color: #0088cc;
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #ddd;
+            --success-color: #4CAF50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px;
+            color: var(--text-color);
+        }
+
+        p, ul, ol {
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .language-btn {
+            padding: 8px 15px;
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .tab-container {
+            margin-bottom: 30px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
+
+        .highlight {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .warning {
+            border-left: 4px solid var(--warning-color);
+            padding-left: 15px;
+            margin-bottom: 15px;
+            background-color: rgba(255, 152, 0, 0.05);
+            padding: 15px 15px 15px 20px;
+            border-radius: 4px;
+        }
+
+        .success {
+            border-left: 4px solid var(--success-color);
+            padding-left: 15px;
+            margin-bottom: 15px;
+            background-color: rgba(76, 175, 80, 0.05);
+            padding: 15px 15px 15px 20px;
+            border-radius: 4px;
+        }
+
+        .danger {
+            border-left: 4px solid var(--danger-color);
+            padding-left: 15px;
+            margin-bottom: 15px;
+            background-color: rgba(244, 67, 54, 0.05);
+            padding: 15px 15px 15px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .important {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab {
+                padding: 10px;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .tab.active {
+                border-bottom: 1px solid var(--primary-color);
+                background-color: var(--secondary-color);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cooplink Bot</h1>
+            <p>Privacy Policy, Terms of Use & Rules</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="language-selector">
+            <button class="language-btn active" data-lang="uz">O'zbek</button>
+            <button class="language-btn" data-lang="ru">Русский</button>
+        </div>
+
+        <div class="tab-container">
+            <div class="tabs">
+                <div class="tab active" data-tab="privacy">
+                    <span class="uz-content active">Maxfiylik siyosati</span>
+                    <span class="ru-content">Политика конфиденциальности</span>
+                </div>
+                <div class="tab" data-tab="terms">
+                    <span class="uz-content active">Foydalanish shartlari</span>
+                    <span class="ru-content">Условия использования</span>
+                </div>
+                <div class="tab" data-tab="rules">
+                    <span class="uz-content active">Kod sotish qoidalari</span>
+                    <span class="ru-content">Правила продажи кода</span>
+                </div>
+            </div>
+
+            <!-- Privacy Policy -->
+            <div class="tab-content active" id="privacy">
+                <!-- Uzbek Privacy Policy -->
+                <div class="language-content uz-content active">
+                    <h2>Maxfiylik siyosati</h2>
+                    <p>Ushbu maxfiylik siyosati Cooplink botdan foydalanishda shaxsiy ma'lumotlaringiz qanday to'planishi, ishlatilishi va himoya qilinishini tushuntiradi.</p>
+
+                    <div class="danger">
+                        <p><strong>Muhim eslatma:</strong> Cooplink bot faqat e'lonlarni joylashtirish uchun xizmat qiladi. Bot foydalanuvchilarning kodlarini saqlamaydi va ularni qayta ishlamaydi.</p>
+                    </div>
+
+                    <h3>Qanday ma'lumotlarni to'playmiz</h3>
+                    <p>Cooplink bot quyidagi ma'lumotlarni to'playdi:</p>
+                    <ul>
+                        <li>Telegram foydalanuvchi ID raqamingiz</li>
+                        <li>Telegram foydalanuvchi nomingiz (username)</li>
+                        <li>Siz kiritgan kod sotish e'lonlari ma'lumotlari</li>
+                        <li>Bot bilan muloqot tarixingiz</li>
+                    </ul>
+
+                    <h3>Ma'lumotlardan qanday foydalanamiz</h3>
+                    <p>To'plangan ma'lumotlar quyidagi maqsadlarda ishlatiladi:</p>
+                    <ul>
+                        <li>Bot xizmatlarini taqdim etish</li>
+                        <li>Kod sotish e'lonlarini boshqarish va kanalda joylashtirish</li>
+                        <li>Foydalanuvchilar bilan aloqa o'rnatish</li>
+                        <li>Xizmat sifatini yaxshilash</li>
+                    </ul>
+
+                    <h3>Ma'lumotlarni saqlash va himoya qilish</h3>
+                    <p>Barcha ma'lumotlar xavfsiz serverlarda saqlanadi va ruxsatsiz kirishdan himoyalanadi. Biz ma'lumotlaringizni uchinchi shaxslarga sotmaymiz yoki taqdim etmaymiz, qonun talablari bundan mustasno.</p>
+
+                    <div class="highlight">
+                        <p><strong>Eslatma:</strong> Bot sizning kodingizni yoki loyihangizni saqlamaydi, faqat e'lon ma'lumotlarini saqlaydi.</p>
+                    </div>
+
+                    <h3>Foydalanuvchi huquqlari</h3>
+                    <p>Siz quyidagi huquqlarga egasiz:</p>
+                    <ul>
+                        <li>O'zingiz haqidagi ma'lumotlarni ko'rish</li>
+                        <li>Ma'lumotlaringizni o'zgartirish yoki to'g'rilash</li>
+                        <li>Ma'lumotlaringizni o'chirish so'rovi</li>
+                    </ul>
+                    <p>Ushbu huquqlardan foydalanish uchun, iltimos, @abdulaziz_python bilan bog'laning.</p>
+                </div>
+
+                <!-- Russian Privacy Policy -->
+                <div class="language-content ru-content">
+                    <h2>Политика конфиденциальности</h2>
+                    <p>Данная политика конфиденциальности объясняет, как собирается, используется и защищается ваша личная информация при использовании бота Cooplink.</p>
+
+                    <div class="danger">
+                        <p><strong>Важное примечание:</strong> Бот Cooplink служит только для размещения объявлений. Бот не хранит и не обрабатывает коды пользователей.</p>
+                    </div>
+
+                    <h3>Какую информацию мы собираем</h3>
+                    <p>Бот Cooplink собирает следующую информацию:</p>
+                    <ul>
+                        <li>Ваш ID пользователя Telegram</li>
+                        <li>Ваше имя пользователя Telegram (username)</li>
+                        <li>Данные объявлений о продаже кода, которые вы размещаете</li>
+                        <li>История вашего взаимодействия с ботом</li>
+                    </ul>
+
+                    <h3>Как мы используем информацию</h3>
+                    <p>Собранная информация используется для следующих целей:</p>
+                    <ul>
+                        <li>Предоставление услуг бота</li>
+                        <li>Управление объявлениями о продаже кода и размещение их в канале</li>
+                        <li>Коммуникация с пользователями</li>
+                        <li>Улучшение качества обслуживания</li>
+                    </ul>
+
+                    <h3>Хранение и защита данных</h3>
+                    <p>Вся информация хранится на защищенных серверах и защищена от несанкционированного доступа. Мы не продаем и не предоставляем вашу информацию третьим лицам, за исключением случаев, предусмотренных законом.</p>
+
+                    <div class="highlight">
+                        <p><strong>Примечание:</strong> Бот не хранит ваш код или проект, только информацию об объявлении.</p>
+                    </div>
+
+                    <h3>Права пользователя</h3>
+                    <p>Вы имеете следующие права:</p>
+                    <ul>
+                        <li>Просмотр информации о себе</li>
+                        <li>Изменение или исправление ваших данных</li>
+                        <li>Запрос на удаление ваших данных</li>
+                    </ul>
+                    <p>Для реализации этих прав, пожалуйста, свяжитесь с @abdulaziz_python.</p>
+                </div>
+            </div>
+
+            <!-- Terms of Use -->
+            <div class="tab-content" id="terms">
+                <!-- Uzbek Terms of Use -->
+                <div class="language-content uz-content active">
+                    <h2>Foydalanish shartlari</h2>
+                    <p>Cooplink botdan foydalanish quyidagi shartlarga rozilik bildirishingizni anglatadi.</p>
+
+                    <div class="danger">
+                        <p><strong>Muhim ogohlantirish:</strong> Kanal egasi va bot administratorlari foydalanuvchilar va sotuvchilar o'rtasidagi har qanday kelishmovchiliklarga va shartlarga aralashmaydi va javob bermaydi. Barcha bitimlar foydalanuvchilarning o'z mas'uliyati ostida amalga oshiriladi.</p>
+                    </div>
+
+                    <h3>Xizmatdan foydalanish</h3>
+                    <p>Cooplink bot dasturchilar uchun kod va loyihalarni sotish e'lonlarini joylashtirish platformasidir. Botdan foydalanish uchun siz:</p>
+                    <ul>
+                        <li>18 yoshdan katta bo'lishingiz kerak</li>
+                        <li>Haqiqiy va to'g'ri ma'lumotlarni taqdim etishingiz kerak</li>
+                        <li>Botdan faqat qonuniy maqsadlarda foydalanishingiz kerak</li>
+                        <li>Boshqa foydalanuvchilar huquqlarini hurmat qilishingiz kerak</li>
+                    </ul>
+
+                    <h3>Taqiqlangan kontentlar</h3>
+                    <p>Quyidagi turdagi kontentlarni joylashtirish qat'iyan taqiqlanadi:</p>
+                    <ul>
+                        <li>Noqonuniy faoliyat bilan bog'liq kod yoki loyihalar</li>
+                        <li>Zararli dasturiy ta'minot yoki viruslar</li>
+                        <li>Boshqa shaxslar intellektual mulkini buzadigan materiallar</li>
+                        <li>Yolg'on yoki chalg'ituvchi ma'lumotlar</li>
+                        <li>Pornografik yoki nomunosib materiallar</li>
+                    </ul>
+
+                    <h3>Javobgarlik cheklovi</h3>
+                    <p>Cooplink bot administratorlari quyidagilar uchun javobgar emas:</p>
+                    <ul>
+                        <li>Foydalanuvchilar tomonidan joylashtirilgan kod yoki loyihalar sifati</li>
+                        <li>Foydalanuvchilar o'rtasidagi bitimlar va to'lovlar</li>
+                        <li>Bot ishidagi texnik uzilishlar</li>
+                        <li>Uchinchi tomon xizmatlari bilan bog'liq muammolar</li>
+                        <li>Foydalanuvchilar o'rtasidagi har qanday kelishmovchiliklar</li>
+                    </ul>
+
+                    <div class="warning">
+                        <p><strong>Diqqat:</strong> Bot faqat e'lonlarni joylashtirish uchun xizmat qiladi. Barcha bitimlar foydalanuvchilar o'rtasida to'g'ridan-to'g'ri amalga oshiriladi va bot administratorlari bu jarayonga aralashmaydi.</p>
+                    </div>
+
+                    <h3>Shartlarni o'zgartirish</h3>
+                    <p>Biz ushbu foydalanish shartlarini istalgan vaqtda o'zgartirish huquqiga egamiz. O'zgarishlar bot orqali e'lon qilinadi va kuchga kiradi.</p>
+                </div>
+
+                <!-- Russian Terms of Use -->
+                <div class="language-content ru-content">
+                    <h2>Условия использования</h2>
+                    <p>Использование бота Cooplink означает ваше согласие со следующими условиями.</p>
+
+                    <div class="danger">
+                        <p><strong>Важное предупреждение:</strong> Владелец канала и администраторы бота не вмешиваются и не несут ответственности за любые соглашения и споры между пользователями и продавцами. Все сделки осуществляются под ответственность самих пользователей.</p>
+                    </div>
+
+                    <h3>Использование сервиса</h3>
+                    <p>Бот Cooplink является платформой для размещения объявлений о продаже кода и проектов для разработчиков. Для использования бота вы должны:</p>
+                    <ul>
+                        <li>Быть старше 18 лет</li>
+                        <li>Предоставлять достоверную и точную информацию</li>
+                        <li>Использовать бота только в законных целях</li>
+                        <li>Уважать права других пользователей</li>
+                    </ul>
+
+                    <h3>Запрещенный контент</h3>
+                    <p>Строго запрещается размещать следующие типы контента:</p>
+                    <ul>
+                        <li>Код или проекты, связанные с незаконной деятельностью</li>
+                        <li>Вредоносное программное обеспечение или вирусы</li>
+                        <li>Материалы, нарушающие интеллектуальную собственность других лиц</li>
+                        <li>Ложная или вводящая в заблуждение информация</li>
+                        <li>Порнографические или неприемлемые материалы</li>
+                    </ul>
+
+                    <h3>Ограничение ответственности</h3>
+                    <p>Администраторы бота Cooplink не несут ответственности за:</p>
+                    <ul>
+                        <li>Качество кода или проектов, размещенных пользователями</li>
+                        <li>Сделки и платежи между пользователями</li>
+                        <li>Технические сбои в работе бота</li>
+                        <li>Проблемы, связанные с услугами третьих сторон</li>
+                        <li>Любые споры между пользователями</li>
+                    </ul>
+
+                    <div class="warning">
+                        <p><strong>Внимание:</strong> Бот служит только для размещения объявлений. Все сделки осуществляются напрямую между пользователями, и администраторы бота не вмешиваются в этот процесс.</p>
+                    </div>
+
+                    <h3>Изменение условий</h3>
+                    <p>Мы оставляем за собой право изменять эти условия использования в любое время. Изменения будут объявлены через бота и вступят в силу после публикации.</p>
+                </div>
+            </div>
+
+            <!-- Rules for Selling Code -->
+            <div class="tab-content" id="rules">
+                <!-- Uzbek Rules for Selling Code -->
+                <div class="language-content uz-content active">
+                    <h2>Kod sotish qoidalari</h2>
+                    <p>Cooplink bot orqali kod va loyihalarni sotishda quyidagi qoidalarga rioya qilish zarur.</p>
+
+                    <div class="danger">
+                        <p><strong>Muhim eslatma:</strong> Bot faqat e'lonlarni joylashtirish uchun xizmat qiladi va foydalanuvchilarning kodlarini saqlamaydi. Kanal egasi va bot administratorlari foydalanuvchilar va sotuvchilar o'rtasidagi har qanday kelishmovchiliklarga va shartlarga aralashmaydi va javob bermaydi.</p>
+                    </div>
+
+                    <h3>E'lon joylashtirish</h3>
+                    <p>Kod sotish e'lonini joylashtirish uchun:</p>
+                    <ol>
+                        <li>Botda "Kodimni sotish" tugmasini bosing</li>
+                        <li>Loyiha nomini kiriting</li>
+                        <li>Loyiha havolasini kiriting (GitHub, GitLab va h.k.)</li>
+                        <li>Qo'llanilgan texnologiyalarni kiriting</li>
+                        <li>Narxni USD da kiriting</li>
+                        <li>Loyiha haqida qisqacha ma'lumot kiriting</li>
+                        <li>Loyiha uchun rasm yuklang (ixtiyoriy)</li>
+                        <li>Ma'lumotlarni tasdiqlang</li>
+                    </ol>
+
+                    <div class="highlight">
+                        <p>E'loningiz moderatorlar tomonidan tekshirilgandan so'ng kanalda e'lon qilinadi. Bot sizning kodingizni yoki loyihangizni saqlamaydi, faqat e'lon ma'lumotlarini saqlaydi.</p>
+                    </div>
+
+                    <h3>Kod sifati talablari</h3>
+                    <p>Sotilayotgan kod quyidagi talablarga javob berishi kerak:</p>
+                    <ul>
+                        <li>Kod to'liq ishlashi va asosiy funksionallikni bajarishi kerak</li>
+                        <li>Kod yaxshi hujjatlashtirilgan bo'lishi kerak</li>
+                        <li>Kod sizning intellektual mulkingiz bo'lishi yoki tegishli litsenziyalarga ega bo'lishi kerak</li>
+                        <li>Kod zararli komponentlardan xoli bo'lishi kerak</li>
+                    </ul>
+
+                    <h3>To'lov va komissiyalar</h3>
+                    <p>Kod sotish jarayoni quyidagicha amalga oshiriladi:</p>
+                    <ul>
+                        <li>To'lovlar xaridor va sotuvchi o'rtasida to'g'ridan-to'g'ri amalga oshiriladi</li>
+                        <li>Cooplink hozirda komissiya olmaydi, lekin kelajakda bu o'zgarishi mumkin</li>
+                        <li>Barcha moliyaviy operatsiyalar uchun javobgarlik foydalanuvchilar zimmasida</li>
+                    </ul>
+
+                    <div class="warning">
+                        <p><strong>Diqqat:</strong> Firibgarlikdan ehtiyot bo'ling. Notanish shaxslarga oldindan to'lov qilishdan saqlaning. Bot administratorlari foydalanuvchilar o'rtasidagi bitimlar uchun javobgar emas.</p>
+                    </div>
+
+                    <h3>Nizolarni hal qilish</h3>
+                    <p>Agar kod sotish jarayonida nizolar yuzaga kelsa:</p>
+                    <ol>
+                        <li>Avval muammoni xaridor va sotuvchi o'rtasida hal qilishga harakat qiling</li>
+                        <li>Bot administratorlari foydalanuvchilar o'rtasidagi kelishmovchiliklarga aralashmaydi</li>
+                        <li>Barcha bitimlar foydalanuvchilarning o'z mas'uliyati ostida amalga oshiriladi</li>
+                    </ol>
+
+                    <div class="success">
+                        <p><strong>Maslahat:</strong> Xaridorga kod namunasini ko'rsatish orqali ishonch hosil qilishingiz mumkin. Bitimlarni rasmiy hujjatlar bilan rasmiylashtirish tavsiya etiladi.</p>
+                    </div>
+                </div>
+
+                <!-- Russian Rules for Selling Code -->
+                <div class="language-content ru-content">
+                    <h2>Правила продажи кода</h2>
+                    <p>При продаже кода и проектов через бот Cooplink необходимо соблюдать следующие правила.</p>
+
+                    <div class="danger">
+                        <p><strong>Важное примечание:</strong> Бот служит только для размещения объявлений и не хранит коды пользователей. Владелец канала и администраторы бота не вмешиваются и не несут ответственности за любые соглашения и споры между пользователями и продавцами.</p>
+                    </div>
+
+                    <h3>Размещение объявления</h3>
+                    <p>Для размещения объявления о продаже кода:</p>
+                    <ol>
+                        <li>Нажмите кнопку "Продать код" в боте</li>
+                        <li>Введите название проекта</li>
+                        <li>Введите ссылку на проект (GitHub, GitLab и т.д.)</li>
+                        <li>Укажите использованные технологии</li>
+                        <li>Введите цену в USD</li>
+                        <li>Введите краткое описание проекта</li>
+                        <li>Загрузите изображение для проекта (необязательно)</li>
+                        <li>Подтвердите информацию</li>
+                    </ol>
+
+                    <div class="highlight">
+                        <p>Ваше объявление будет опубликовано в канале после проверки модераторами. Бот не хранит ваш код или проект, только информацию об объявлении.</p>
+                    </div>
+
+                    <h3>Требования к качеству кода</h3>
+                    <p>Продаваемый код должен соответствовать следующим требованиям:</p>
+                    <ul>
+                        <li>Код должен полностью работать и выполнять основные функции</li>
+                        <li>Код должен быть хорошо документирован</li>
+                        <li>Код должен быть вашей интеллектуальной собственностью или иметь соответствующие лицензии</li>
+                        <li>Код должен быть свободен от вредоносных компонентов</li>
+                    </ul>
+
+                    <h3>Оплата и комиссии</h3>
+                    <p>Процесс продажи кода осуществляется следующим образом:</p>
+                    <ul>
+                        <li>Платежи производятся напрямую между покупателем и продавцом</li>
+                        <li>Cooplink в настоящее время не взимает комиссию, но это может измениться в будущем</li>
+                        <li>Ответственность за все финансовые операции лежит на пользователях</li>
+                    </ul>
+
+                    <div class="warning">
+                        <p><strong>Внимание:</strong> Остерегайтесь мошенничества. Избегайте предоплаты незнакомым лицам. Администраторы бота не несут ответственности за сделки между пользователями.</p>
+                    </div>
+
+                    <h3>Разрешение споров</h3>
+                    <p>Если возникают споры в процессе продажи кода:</p>
+                    <ol>
+                        <li>Сначала попытайтесь решить проблему между покупателем и продавцом</li>
+                        <li>Администраторы бота не вмешиваются в споры между пользователями</li>
+                        <li>Все сделки осуществляются под ответственность самих пользователей</li>
+                    </ol>
+
+                    <div class="success">
+                        <p><strong>Совет:</strong> Вы можете повысить доверие, показав покупателю образец кода. Рекомендуется оформлять сделки официальными документами.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Cooplink Bot. <span class="uz-content active">Barcha huquqlar himoyalangan.</span><span class="ru-content">Все права защищены.</span></p>
+            <p>Telegram: @cooplink</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language switcher
+        const languageBtns = document.querySelectorAll('.language-btn');
+        const languageContents = document.querySelectorAll('.language-content');
+
+        languageBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                
+                // Update buttons
+                languageBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update content
+                languageContents.forEach(content => {
+                    if (content.classList.contains(lang + '-content')) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Tab switcher
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                // Update tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update content
+                tabContents.forEach(content => {
+                    if (content.id === tabId) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
