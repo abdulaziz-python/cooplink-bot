@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from dataclasses import dataclass
 from enum import Enum
 from typing import Dict
@@ -44,4 +43,5 @@ class Config:
     AVAILABLE_LANGUAGES = [lang.value for lang in Language]
     DEFAULT_LANGUAGE = Language.UZ.value
     REQUIRED_CHANNELS = [Channel.COOPLINK, Channel.PYTHONNEWS]
+
 

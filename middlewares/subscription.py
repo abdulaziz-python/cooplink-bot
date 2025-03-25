@@ -4,6 +4,7 @@ from aiogram import BaseMiddleware
 from aiogram.types import Message
 from config import channels
 from utils.localization import get_string
+from utils.helpers import format_html
 
 class SubscriptionMiddleware(BaseMiddleware):
     async def __call__(
@@ -24,9 +25,16 @@ class SubscriptionMiddleware(BaseMiddleware):
                 if member.status in ['left', 'kicked', 'banned']:
                     user_data = data.get('user_data', {})
                     language = user_data.get('language', 'uz')
+                    
+                    subscription_template = get_string('subscription_required', language)
+                    subscription_text = format_html(
+                        subscription_template,
+                        channel=channel
+                    )
+                    
                     await event.answer(
-                        get_string('subscription_required', language).format(channel=channel),
-                        parse_mode="Markdown"
+                        subscription_text,
+                        parse_mode="HTML"
                     )
                     return
             except Exception as e:
