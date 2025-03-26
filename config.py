@@ -4,7 +4,7 @@ from typing import List
 
 @dataclass
 class BotConfig:
-    TOKEN: str = "7510441533:AAHrqS5AWdHzLlNNlrg5FncL-YlmQjSs16k"
+    TOKEN: str = "Bot token"
     ADMIN_IDS: List[int] = field(default_factory=lambda: [6236467772])
     DB_NAME: str = "code_selling_bot.db"
     ANNOUNCEMENT_CHANNEL: str = "@cooplink"
