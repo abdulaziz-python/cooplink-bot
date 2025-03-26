@@ -21,4 +21,3 @@ def text_contains_button(button: ButtonText) -> Callable:
         )
     
     return check
-
