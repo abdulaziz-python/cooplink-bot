@@ -19,30 +19,32 @@ def format_and_escape_markdown(template: str, **kwargs) -> str:
     return escape_markdown_v2(formatted_text)
 
 def escape_html(text: str) -> str:
-    """Escape HTML special characters"""
-    return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    if text is None:
+        return ""
+    return str(text).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 def to_html(text: str) -> str:
+    if text is None:
+        return ""
     text = escape_html(text)
-    
     text = re.sub(r'\*(.*?)\*', r'<b>\1</b>', text)
-    
     text = re.sub(r'_(.*?)_', r'<i>\1</i>', text)
-    
     text = re.sub(r'`(.*?)`', r'<code>\1</code>', text)
-    
     return text
 
 def format_html(template: str, **kwargs) -> str:
-    escaped_kwargs = {k: escape_html(str(v)) if k != 'image_file_id' else v for k, v in kwargs.items()}
+    escaped_kwargs = {
+        k: escape_html(str(v)) if k != 'image_file_id' else v 
+        for k, v in kwargs.items()
+    }
     
-    formatted_text = template.format(**escaped_kwargs)
+    try:
+        formatted_text = template.format(**escaped_kwargs)
+    except KeyError:
+        formatted_text = template
     
     formatted_text = re.sub(r'\*(.*?)\*', r'<b>\1</b>', formatted_text)
-    
     formatted_text = re.sub(r'_(.*?)_', r'<i>\1</i>', formatted_text)
-    
     formatted_text = re.sub(r'`(.*?)`', r'<code>\1</code>', formatted_text)
     
     return formatted_text
-
