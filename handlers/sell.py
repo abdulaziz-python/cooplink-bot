@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from aiogram import Router, F
 from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
@@ -7,7 +6,7 @@ from database.db import add_listing, get_user
 from keyboards.reply import main_menu_keyboard, skip_keyboard, confirm_keyboard
 from keyboards.inline import moderation_keyboard
 from utils.localization import get_string
-from utils.helpers import format_and_escape_markdown
+from utils.helpers import format_html
 from config import config
 from constants import Button, ButtonText, Language, Config
 from utils.filters import text_contains_button
@@ -28,7 +27,7 @@ async def notify_admins(message: Message, listing_id: int, data: dict, language:
         try:
             username = message.from_user.username or "Unknown"
             
-            notification_text = format_and_escape_markdown(
+            notification_text = format_html(
                 get_string('new_listing', language),
                 username=username,
                 **data
@@ -38,7 +37,6 @@ async def notify_admins(message: Message, listing_id: int, data: dict, language:
                 chat_id=admin_id,
                 text=notification_text,
                 reply_markup=moderation_keyboard(listing_id, language),
-                parse_mode="MarkdownV2"
             )
             
             if data.get('image_file_id'):
@@ -46,8 +44,7 @@ async def notify_admins(message: Message, listing_id: int, data: dict, language:
                 await message.bot.send_photo(
                     chat_id=admin_id,
                     photo=data['image_file_id'],
-                    caption=format_and_escape_markdown(caption),
-                    parse_mode="MarkdownV2"
+                    caption=caption
                 )
         except Exception as e:
             print(f"Error notifying admin {admin_id}: {e}")
@@ -60,8 +57,7 @@ async def sell_code_start(message: Message, state: FSMContext, **kwargs):
     await state.update_data(language=language)
     
     await message.answer(
-        text=format_and_escape_markdown(get_string('sell_code_start', language)),
-        parse_mode="MarkdownV2"
+        text=format_html(get_string('sell_code_start', language)),
     )
     await state.set_state(SellCode.waiting_for_name)
 
@@ -72,8 +68,7 @@ async def process_name(message: Message, state: FSMContext):
     
     await state.update_data(name=message.text)
     await message.answer(
-        text=format_and_escape_markdown(get_string('enter_project_link', language)),
-        parse_mode="MarkdownV2"
+        text=format_html(get_string('enter_project_link', language)),
     )
     await state.set_state(SellCode.waiting_for_link)
 
@@ -84,8 +79,7 @@ async def process_link(message: Message, state: FSMContext):
     
     await state.update_data(link=message.text)
     await message.answer(
-        text=format_and_escape_markdown(get_string('enter_technologies', language)),
-        parse_mode="MarkdownV2"
+        text=format_html(get_string('enter_technologies', language)),
     )
     await state.set_state(SellCode.waiting_for_technologies)
 
@@ -96,8 +90,7 @@ async def process_technologies(message: Message, state: FSMContext):
     
     await state.update_data(technologies=message.text)
     await message.answer(
-        text=format_and_escape_markdown(get_string('enter_price', language)),
-        parse_mode="MarkdownV2"
+        text=format_html(get_string('enter_price', language)),
     )
     await state.set_state(SellCode.waiting_for_price)
 
@@ -111,14 +104,12 @@ async def process_price(message: Message, state: FSMContext):
         await state.update_data(price=price)
         
         await message.answer(
-            text=format_and_escape_markdown(get_string('enter_description', language)),
-            parse_mode="MarkdownV2"
+            text=format_html(get_string('enter_description', language)),
         )
         await state.set_state(SellCode.waiting_for_description)
     except ValueError:
         await message.answer(
-            text=format_and_escape_markdown(get_string('enter_price', language)),
-            parse_mode="MarkdownV2"
+            text=format_html(get_string('enter_price', language)),
         )
 
 @router.message(SellCode.waiting_for_description)
@@ -128,9 +119,8 @@ async def process_description(message: Message, state: FSMContext):
     
     await state.update_data(description=message.text)
     await message.answer(
-        text=format_and_escape_markdown(get_string('enter_image', language)),
+        text=format_html(get_string('enter_image', language)),
         reply_markup=skip_keyboard(language),
-        parse_mode="MarkdownV2"
     )
     await state.set_state(SellCode.waiting_for_image)
 
@@ -144,7 +134,7 @@ async def process_image(message: Message, state: FSMContext):
     
     state_data = await state.get_data()
     
-    confirmation_text = format_and_escape_markdown(
+    confirmation_text = format_html(
         get_string('confirm_listing', language),
         **state_data
     )
@@ -152,7 +142,6 @@ async def process_image(message: Message, state: FSMContext):
     await message.answer(
         text=confirmation_text,
         reply_markup=confirm_keyboard(language),
-        parse_mode="MarkdownV2"
     )
     await state.set_state(SellCode.waiting_for_confirmation)
 
@@ -164,7 +153,7 @@ async def skip_image(message: Message, state: FSMContext):
     await state.update_data(image_file_id=None)
     state_data = await state.get_data()
     
-    confirmation_text = format_and_escape_markdown(
+    confirmation_text = format_html(
         get_string('confirm_listing', language),
         **state_data
     )
@@ -172,7 +161,6 @@ async def skip_image(message: Message, state: FSMContext):
     await message.answer(
         text=confirmation_text,
         reply_markup=confirm_keyboard(language),
-        parse_mode="MarkdownV2"
     )
     await state.set_state(SellCode.waiting_for_confirmation)
 
@@ -187,9 +175,8 @@ async def confirm_listing(message: Message, state: FSMContext):
         listing_id = await add_listing(user_id=message.from_user.id, **listing_data)
         
         await message.answer(
-            text=format_and_escape_markdown(get_string('listing_submitted', language)),
+            text=format_html(get_string('listing_submitted', language)),
             reply_markup=main_menu_keyboard(language),
-            parse_mode="MarkdownV2"
         )
         
         await notify_admins(message, listing_id, listing_data, language)
@@ -197,8 +184,7 @@ async def confirm_listing(message: Message, state: FSMContext):
         
     elif text_contains_button(Button.NO)(message):
         await message.answer(
-            text=format_and_escape_markdown(get_string('sell_code_start', language)),
-            parse_mode="MarkdownV2"
+            text=format_html(get_string('sell_code_start', language)),
         )
         await state.set_state(SellCode.waiting_for_name)
 
@@ -208,7 +194,6 @@ async def reject_listing(message: Message, state: FSMContext):
     language = data.get('language', Config.DEFAULT_LANGUAGE)
     
     await message.answer(
-        text=format_and_escape_markdown(get_string('sell_code_start', language)),
-        parse_mode="MarkdownV2"
+        text=format_html(get_string('sell_code_start', language)),
     )
     await state.set_state(SellCode.waiting_for_name)

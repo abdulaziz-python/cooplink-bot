@@ -32,19 +32,27 @@ def to_html(text: str) -> str:
     text = re.sub(r'`(.*?)`', r'<code>\1</code>', text)
     return text
 
+import re
+
+def escape_html(text: str) -> str:
+    if text is None:
+        return ""
+    return str(text).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
 def format_html(template: str, **kwargs) -> str:
-    escaped_kwargs = {
-        k: escape_html(str(v)) if k != 'image_file_id' else v 
-        for k, v in kwargs.items()
-    }
-    
     try:
+        escaped_kwargs = {
+            k: escape_html(str(v)) if isinstance(v, (str, int, float)) and k != 'image_file_id' else v 
+            for k, v in kwargs.items()
+        }
+        
         formatted_text = template.format(**escaped_kwargs)
-    except KeyError:
-        formatted_text = template
-    
-    formatted_text = re.sub(r'\*(.*?)\*', r'<b>\1</b>', formatted_text)
-    formatted_text = re.sub(r'_(.*?)_', r'<i>\1</i>', formatted_text)
-    formatted_text = re.sub(r'`(.*?)`', r'<code>\1</code>', formatted_text)
-    
-    return formatted_text
+        
+        formatted_text = re.sub(r'\*(.*?)\*', r'<b>\1</b>', formatted_text)
+        formatted_text = re.sub(r'_(.*?)_', r'<i>\1</i>', formatted_text)
+        formatted_text = re.sub(r'`(.*?)`', r'<code>\1</code>', formatted_text)
+        
+        return formatted_text
+    except Exception as e:
+        print(f"Error in format_html: {e}")
+        return template
