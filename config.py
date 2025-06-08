@@ -5,7 +5,7 @@ import os
 
 @dataclass
 class BotConfig:
-    TOKEN: str = "7510441533:AAHrqS5AWdHzLlNNlrg5FncL-YlmQjSs16k"
+    TOKEN: str = "BOT_TOKEN"
     ADMIN_IDS: List[int] = field(default_factory=lambda: [6236467772])
     DB_NAME: str = "code_selling_bot.db"
     ANNOUNCEMENT_CHANNEL: str = "@cooplink"
@@ -23,4 +23,4 @@ ADMIN_IDS = config.ADMIN_IDS
 DB_NAME = config.DB_NAME
 ANNOUNCEMENT_CHANNEL = config.ANNOUNCEMENT_CHANNEL
 REQUIRED_CHANNELS = channels.REQUIRED
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://cooplink_c1n2_user:XaxI3h4NKkwlp6UnMZNSQTFjLNn3ulsf@dpg-d1277gs9c44c7381da8g-a.oregon-postgres.render.com/cooplink_c1n2")
+DATABASE_URL = os.getenv("DATABASE_URL", "DATABASE_URL")
