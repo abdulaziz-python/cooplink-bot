@@ -61,6 +61,7 @@ def get_string(key, language='uz'):
             'help': "<b>🔍 Руководство по использованию бота</b>\n\nЭтот бот позволяет вам размещать объявления о продаже своих программных продуктов.\n\n<b>Основные команды:</b>\n/start - Запустить бота\n/cancel - Отменить текущее действие\n\nЕсли у вас есть вопросы или предложения, обращайтесь к @y0rdam42.",
             'command_list': "🤖 <b>Команды бота:</b>\n\n/start - Запустить бота\n/cancel - Отменить текущее действие\n/profile - Посмотреть данные профиля\n/help - Помощь",
             'sell_code_start': "<b>📝 Продажа программного продукта</b>\n\nПожалуйста, введите название проекта/кода:",
+            'subscription_required': "<b>Чтобы пользоваться ботом, сначала подпишитесь на канал {channel}.</b>",
             
             'admin_panel': "<b>Панель управления администратора</b>\n\nВсего пользователей: {total_users}\nВсего объявлений: {total_listings}",
             'broadcast_prompt': "<b>Введите сообщение для отправки всем пользователям:</b>",
@@ -113,7 +114,7 @@ def get_string(key, language='uz'):
             'help': "<b>🔍 Bot Usage Guide</b>\n\nThis bot allows you to post listings to sell your programming products.\n\n<b>Main commands:</b>\n/start - Start the bot\n/cancel - Cancel current operation\n\nIf you have any questions or suggestions, please contact @y0rdam42.",
             'command_list': "🤖 <b>Bot commands:</b>\n\n/start - Start the bot\n/cancel - Cancel current operation\n/profile - View profile information\n/help - Help",
             'sell_code_start': "<b>📝 Sell Programming Product</b>\n\nPlease enter the project/code name:",
-            
+            'subscription_required': "<b>to continue subscribe for that channels</b>",
             'admin_panel': "<b>Administrator Control Panel</b>\n\nTotal Users: {total_users}\nTotal Listings: {total_listings}",
             'broadcast_prompt': "<b>Please enter the message to broadcast to all users:</b>",
             'broadcast_started': "<b>Sending messages, please wait...</b>",
