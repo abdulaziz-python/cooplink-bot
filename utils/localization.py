@@ -9,6 +9,8 @@ def get_string(key, language='uz'):
             'help': "<b>🔍 Botdan foydalanish yo'riqnomasi</b>\n\nBu bot orqali siz o'z dasturlash kod mahsulotlaringizni sotish uchun e'lon joylashtirishingiz mumkin.\n\n<b>Asosiy buyruqlar:</b>\n/start - Botni ishga tushirish\n/cancel - Joriy amalni bekor qilish\n\nSavollar yoki takliflar bo'lsa, @y0rdam42 ga murojaat qiling.",
             'command_list': "🤖 <b>Bot buyruqlari:</b>\n\n/start - Botni ishga tushirish\n/cancel - Joriy amalni bekor qilish\n/profile - Profil ma'lumotlarini ko'rish\n/help - Yordam",
             'sell_code_start': "<b>📝 Dasturlash mahsulotini sotish</b>\n\nIltimos, loyiha/kod nomini kiriting:",
+            'subscription_required': "<b>Botdan foydalanish uchun avval {channel} kanaliga obuna bo'ling.</b>",
+            
             
             'admin_panel': "<b>Administrator boshqaruv paneli</b>\n\nJami foydalanuvchilar: {total_users}\nJami e'lonlar: {total_listings}",
             'broadcast_prompt': "<b>Barcha foydalanuvchilarga yuborish uchun xabarni kiriting:</b>",
