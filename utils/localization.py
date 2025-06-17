@@ -5,7 +5,7 @@ strings = {
     'uz': {
         'welcome': "🇺🇿 *Xush kelibsiz!*\n\nIltimos, tilni tanlang:",
         'language_selected': "🇺🇿 O'zbek tili tanlandi!",
-        'subscription_required': f"❗️ Bot imkoniyatlaridan foydalanish uchun {{channel}} kanaliga obuna bo'ling!",
+        'subscription_required': "❗️ Bot imkoniyatlaridan foydalanish uchun {channel} kanaliga obuna bo'ling!",
         'main_menu': "📱 *Asosiy menyu*\n\nQuyidagi tugmalardan birini tanlang:",
         'profile': "👤 *Mening profilim*\n\n🆔 ID: `{user_id}`\n👤 Username: @{username}\n📊 Sotuvdagi kodlar: {listings_count}",
         'sell_code_start': "💰 *Kodingizni sotish*\n\nIltimos, loyiha nomini kiriting:",
@@ -33,7 +33,7 @@ strings = {
     'ru': {
         'welcome': "🇷🇺 *Добро пожаловать!*\n\nПожалуйста, выберите язык:",
         'language_selected': "🇷🇺 Выбран русский язык!",
-        'subscription_required': f"❗️ Для использования возможностей бота, подпишитесь на канал {{channel}}!",
+        'subscription_required': "❗️ Для использования возможностей бота, подпишитесь на канал {channel}!",
         'main_menu': "📱 *Главное меню*\n\nВыберите одну из кнопок ниже:",
         'profile': "👤 *Мой профиль*\n\n🆔 ID: `{user_id}`\n👤 Имя пользователя: @{username}\n📊 Кодов на продаже: {listings_count}",
         'sell_code_start': "💰 *Продажа вашего кода*\n\nПожалуйста, введите название проекта:",
@@ -68,4 +68,3 @@ def get_string(key, language='uz'):
         return strings['uz'].get(key, f"Missing string: {key}")
         
     return strings[language][key]
-
