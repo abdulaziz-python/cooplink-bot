@@ -63,3 +63,4 @@ def moderation_keyboard(listing_id: int, language: str) -> ReplyKeyboardMarkup:
         ],
         resize_keyboard=True
     )
+
